@@ -221,11 +221,11 @@ For example, say we want the probability density of the standard normal distribu
 @interaction[#:eval untyped-eval
                     (require math/distributions)
                     (define d (normal-dist))
-                    ((real-dist-pdf d) 50.0)]
+                    ((dist-pdf d) 50.0)]
 Mathematically, the density is nonzero everywhere, but the density at 50 is less than
 @racket[+min.0]. However, its density in log space, or its log-density, is representable:
 @interaction[#:eval untyped-eval
-                    ((real-dist-pdf d) 50.0 #t)]
+                    ((dist-pdf d) 50.0 #t)]
 While this example may seem contrived, it is very common, when computing the density
 of a @italic{vector} of data, for the product of the densities to be too small to represent directly.
 
